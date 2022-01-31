@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 28 jan. 2022 à 13:08
+-- Généré le :  lun. 31 jan. 2022 à 09:41
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -25,23 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `abonne`
---
-
-DROP TABLE IF EXISTS `abonne`;
-CREATE TABLE IF NOT EXISTS `abonne` (
-  `id_abonne` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) NOT NULL,
-  `prenom` varchar(50) NOT NULL,
-  `mail` varchar(100) NOT NULL,
-  `mdp` varchar(15) NOT NULL,
-  PRIMARY KEY (`id_abonne`),
-  UNIQUE KEY `id_abonne` (`id_abonne`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `capteur`
 --
 
@@ -56,44 +39,26 @@ CREATE TABLE IF NOT EXISTS `capteur` (
   PRIMARY KEY (`id_capteur`),
   UNIQUE KEY `id_place` (`id_place`),
   UNIQUE KEY `id_capteur` (`id_capteur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `compte`
+-- Structure de la table `client`
 --
 
-DROP TABLE IF EXISTS `compte`;
-CREATE TABLE IF NOT EXISTS `compte` (
-  `id_compte` int(11) NOT NULL AUTO_INCREMENT,
-  `id_abonne` int(11) DEFAULT NULL,
-  `gestion_mdp` varchar(15) NOT NULL,
-  `parametre` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_compte`),
-  UNIQUE KEY `id_compte` (`id_compte`),
-  UNIQUE KEY `id_abonne` (`id_abonne`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `duree`
---
-
-DROP TABLE IF EXISTS `duree`;
-CREATE TABLE IF NOT EXISTS `duree` (
-  `id_duree` int(11) NOT NULL AUTO_INCREMENT,
-  `heure_debut` int(3) NOT NULL,
-  `minute_debut` int(3) NOT NULL,
-  `seconde_debut` int(3) NOT NULL,
-  `heure_fin` int(3) NOT NULL,
-  `minute_fin` int(3) NOT NULL,
-  `seconde_fin` int(3) NOT NULL,
-  `date` date NOT NULL,
-  PRIMARY KEY (`id_duree`),
-  UNIQUE KEY `id_duree` (`id_duree`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+DROP TABLE IF EXISTS `client`;
+CREATE TABLE IF NOT EXISTS `client` (
+  `id_client` int(11) NOT NULL AUTO_INCREMENT,
+  `gestion_mdp` varchar(15) DEFAULT NULL,
+  `parametre` varchar(50) DEFAULT NULL,
+  `nom` varchar(45) DEFAULT NULL,
+  `prenom` varchar(45) DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL,
+  `mdp` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_client`),
+  UNIQUE KEY `id_compte` (`id_client`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -104,14 +69,14 @@ CREATE TABLE IF NOT EXISTS `duree` (
 DROP TABLE IF EXISTS `gerant`;
 CREATE TABLE IF NOT EXISTS `gerant` (
   `id_gerant` int(11) NOT NULL AUTO_INCREMENT,
-  `id_parking` int(11) NOT NULL,
+  `id_niveau` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `localite_parking` int(11) NOT NULL,
   PRIMARY KEY (`id_gerant`),
-  UNIQUE KEY `id_parking` (`id_parking`),
+  UNIQUE KEY `id_parking` (`id_niveau`),
   UNIQUE KEY `id_gerant` (`id_gerant`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -122,33 +87,43 @@ CREATE TABLE IF NOT EXISTS `gerant` (
 DROP TABLE IF EXISTS `historique`;
 CREATE TABLE IF NOT EXISTS `historique` (
   `id_histo` int(11) NOT NULL AUTO_INCREMENT,
-  `id_abonne` int(11) NOT NULL,
+  `id_client` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
-  `date` date NOT NULL,
-  `id_compte` int(11) NOT NULL,
   `niveau` int(11) NOT NULL,
-  `id_parking` int(11) NOT NULL,
-  `id_duree` int(11) NOT NULL,
   `id_place` int(11) NOT NULL,
-  `id_tarif` int(11) NOT NULL,
   `id_paiement` int(11) NOT NULL,
   `mode_paiement` varchar(50) NOT NULL,
-  `montantHT` float NOT NULL,
-  `montantTTC` float NOT NULL,
+  `montant` float NOT NULL,
   `id_capteur` int(11) NOT NULL,
   `modele` varchar(50) NOT NULL,
+  `id_reservation` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_histo`),
-  UNIQUE KEY `id_abonne` (`id_abonne`),
-  UNIQUE KEY `id_compte` (`id_compte`),
-  UNIQUE KEY `id_parking` (`id_parking`),
-  UNIQUE KEY `id_duree` (`id_duree`),
+  UNIQUE KEY `id_abonne` (`id_client`),
   UNIQUE KEY `id_place` (`id_place`),
-  UNIQUE KEY `id_tarif` (`id_tarif`),
   UNIQUE KEY `id_paiement` (`id_paiement`),
   UNIQUE KEY `id_capteur` (`id_capteur`),
   UNIQUE KEY `id_histo` (`id_histo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `niveau`
+--
+
+DROP TABLE IF EXISTS `niveau`;
+CREATE TABLE IF NOT EXISTS `niveau` (
+  `id_niveau` int(11) NOT NULL,
+  `id_place` int(11) NOT NULL,
+  `etat` varchar(50) NOT NULL,
+  `niveau` int(11) NOT NULL,
+  `id_gerant` int(11) NOT NULL,
+  PRIMARY KEY (`id_gerant`),
+  UNIQUE KEY `id_place` (`id_place`),
+  UNIQUE KEY `id_parking` (`id_niveau`),
+  KEY `fk_niveau_gerant1_idx` (`id_gerant`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -159,33 +134,14 @@ CREATE TABLE IF NOT EXISTS `historique` (
 DROP TABLE IF EXISTS `paiement`;
 CREATE TABLE IF NOT EXISTS `paiement` (
   `id_paiement` int(11) NOT NULL AUTO_INCREMENT,
-  `id_compte` int(11) NOT NULL,
-  `id_tarif` int(11) NOT NULL,
+  `id_client` int(11) NOT NULL,
   `mode_paiement` varchar(20) NOT NULL,
-  `montantHT` float NOT NULL,
-  `montantTTC` float NOT NULL,
+  `montant` float NOT NULL,
+  `id_reservation` varchar(45) NOT NULL,
   PRIMARY KEY (`id_paiement`),
-  UNIQUE KEY `id_compte` (`id_compte`),
-  UNIQUE KEY `id_tarif` (`id_tarif`),
-  UNIQUE KEY `id_paiement` (`id_paiement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `parking`
---
-
-DROP TABLE IF EXISTS `parking`;
-CREATE TABLE IF NOT EXISTS `parking` (
-  `id_parking` int(11) NOT NULL AUTO_INCREMENT,
-  `id_place` int(11) NOT NULL,
-  `etat` varchar(50) NOT NULL,
-  `niveau` int(11) NOT NULL,
-  PRIMARY KEY (`id_parking`),
-  UNIQUE KEY `id_place` (`id_place`),
-  UNIQUE KEY `id_parking` (`id_parking`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE KEY `id_paiement` (`id_paiement`),
+  KEY `fk_paiement_reservation1_idx` (`id_reservation`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -196,39 +152,11 @@ CREATE TABLE IF NOT EXISTS `parking` (
 DROP TABLE IF EXISTS `place`;
 CREATE TABLE IF NOT EXISTS `place` (
   `id_place` int(11) NOT NULL AUTO_INCREMENT,
-  `id_reservation` int(11) NOT NULL,
-  `id_abonne` int(11) NOT NULL,
-  `place_dispo` tinyint(1) NOT NULL,
-  `place_prive` tinyint(1) NOT NULL,
   `etat` varchar(50) NOT NULL,
-  `id_duree` int(11) NOT NULL,
-  PRIMARY KEY (`id_place`),
-  UNIQUE KEY `id_reservation` (`id_reservation`),
-  UNIQUE KEY `id_abonne` (`id_abonne`),
-  UNIQUE KEY `id_duree` (`id_duree`),
-  UNIQUE KEY `id_place` (`id_place`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `repetition`
---
-
-DROP TABLE IF EXISTS `repetition`;
-CREATE TABLE IF NOT EXISTS `repetition` (
-  `id_rep` int(11) NOT NULL AUTO_INCREMENT,
-  `id_duree` int(11) NOT NULL,
-  `id_compte` int(11) NOT NULL,
-  `journalier` tinyint(1) NOT NULL,
-  `hebdomadaire` tinyint(1) NOT NULL,
-  `mensuel` tinyint(1) NOT NULL,
-  `annuel` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id_rep`),
-  UNIQUE KEY `id_duree` (`id_duree`),
-  UNIQUE KEY `id_compte` (`id_compte`),
-  UNIQUE KEY `id_rep` (`id_rep`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `capteur_id_capteur` int(11) NOT NULL,
+  PRIMARY KEY (`id_place`,`capteur_id_capteur`),
+  KEY `fk_place_capteur1_idx` (`capteur_id_capteur`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -239,38 +167,16 @@ CREATE TABLE IF NOT EXISTS `repetition` (
 DROP TABLE IF EXISTS `reservation`;
 CREATE TABLE IF NOT EXISTS `reservation` (
   `id_reservation` int(11) NOT NULL AUTO_INCREMENT,
-  `id_compte` int(11) NOT NULL,
-  `id_duree` int(11) NOT NULL,
-  `id_rep` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `id_client` int(11) NOT NULL,
+  `date_debut` timestamp NULL DEFAULT NULL,
+  `date_fin` timestamp NULL DEFAULT NULL,
+  `id_place` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_reservation`),
-  UNIQUE KEY `id_compte` (`id_compte`),
-  UNIQUE KEY `id_duree` (`id_duree`),
-  UNIQUE KEY `id_rep` (`id_rep`),
-  UNIQUE KEY `id_reservation` (`id_reservation`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tarif`
---
-
-DROP TABLE IF EXISTS `tarif`;
-CREATE TABLE IF NOT EXISTS `tarif` (
-  `id_tarif` int(11) NOT NULL AUTO_INCREMENT,
-  `id_compte` int(11) NOT NULL,
-  `id_place` int(11) NOT NULL,
-  `id_reservation` int(11) NOT NULL,
-  `id_duree` int(11) NOT NULL,
-  `prix` float NOT NULL,
-  PRIMARY KEY (`id_tarif`),
-  UNIQUE KEY `id_compte` (`id_compte`),
-  UNIQUE KEY `id_place` (`id_place`),
+  UNIQUE KEY `id_compte` (`id_client`),
   UNIQUE KEY `id_reservation` (`id_reservation`),
-  UNIQUE KEY `id_duree` (`id_duree`),
-  UNIQUE KEY `id_tarif` (`id_tarif`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE KEY `id_place_UNIQUE` (`id_place`),
+  KEY `fk_reservation_place1_idx` (`id_place`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
