@@ -13,21 +13,24 @@
 		<h1 id="titre">Centre Commercial</h1> 
 	</header>
 	<nav class="nav li" id="ma_nav"> 
-		<ul><li id="nav_acc">Accueil</li>
-			<li class="deroulant" id="nav_site"><a href="#">Parking</a>
-			
-			<ul class="sous">
-        		<li><a href="#">Niveau 1</a></li>
-        		<li><a href="#">Niveau 2</a></li>
-        		<li><a href="#">Niveau 3</a></li>
-        	</ul>
-			<li id="nav_inscript">Inscription</li> 
-			<li id="nav_co">Connexion</li>
+		<ul>
+			<li><a>Accueil</a></li>
+
+			<li class="deroulant">
+				<a id="parking">Parking</a>
+				<ul class="sous">
+        			<li><a id="n1">Niveau 1</a></li>
+        			<hr>
+        			<li><a id="n2">Niveau 2</a></li>
+        			<hr>
+        			<li><a id="n3">Niveau 3</a></li>
+        		</ul>
+        	</li>
+			<li id="nav_inscript"><a>Inscription</a></li> 
+			<li id="nav_co"><a>Connexion</a></li>
 		</ul>
 	</nav>
 	
-	<section>
-	</section>
 	<table>
 		<p class="rouge"> Place disponible </p> <br/>
 		<tr class="police">
@@ -65,7 +68,27 @@
 	</table>
 	</div>
 		<br>
-		<hr>
+
+	<div id="inscription"><h1 class="bas">Formulaire d'inscription</h1>
+			<p>Inscrivez-vous !</p>
+				<form>
+						<label for="nom"> Nom : </label> 
+						<input class="bord" type="text" maxlength="40" id="nom" name="nom_utilisateur" required/>
+						<label for="prenom"> Prénom : </label> 
+						<input class="bord" type="text" maxlength="40" id="prenom" name="prenom_utilisateur" required/>
+						<label for="adressmail"> Adresse Mail : </label> 
+						<input class="bord" type="email" maxlength="40" id="adressmail" name="adressmail_utilisateur" required/>
+						<label for="ddn"> Date de naissance : </label> 
+						<input class="bord" type="Date"  id="ddn" name="ddn_utilisateur" required/>
+						<label for="pseudo"> Pseudo : </label> 
+						<input class="bord" type="text" maxlength="40" id="pseudo" name="pseudo_utilisateur" required/>
+						<label for="mdp1"> Mot de passe (au moins <span class="red" id="mdp_longueur" >8 caractères</span>, <span class="red" id="mdp_maj">1 Majuscule </span>, <span class="red" id="mdp_min">1 Minuscule</span>, <span class="red" id="mdp_chiffre">1 Chiffre</span>, <span class="red" id="mdp_special">1 Caractère spécial</span>): </label> 
+						<input class="bord" type="password" minlength="8" id="mdp1" name="mdp1" required/>
+						<label for="mdp2"> Ressaisir le mot de passe : </label> 
+						<input class="bord" type="password" minlength="8" id="mdp2" name="mdp2" required/> 
+						<input type="submit" value="Valider" id="envoyer"/>
+				</form>
+	</div>
 	<p class="rouge"> Place disponible actuellement </p> <br/>
 	<div style="padding: 0px 10px;">
 	<p class="saut">Niveau 1 </p>

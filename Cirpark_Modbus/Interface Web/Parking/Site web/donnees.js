@@ -9,3 +9,28 @@ function ChangerTitre() {
 	}
 }
 titre.addEventListener('mouseover', ChangerTitre);
+
+function ChangerSection() {
+	var parking = document.getElementById("ChangerSection");
+	var n1 = document.getElementById("n1");
+	var n2 = document.getElementById("n2");
+	var n3 = document.getElementById("n3");
+	if(this.id == "n1") {
+			n1.style.display = "block";
+			n2.style.display = "none";
+			n3.style.display = "none";
+		}
+	if(this.id == "n2") {
+			n1.style.display = "none";
+			n2.style.display = "block";
+			n3.style.display = "none";
+		}
+	if(this.id == "n3") {
+			n1.style.display = "none";
+			n2.style.display = "none";
+			n3.style.display = "block";
+		}
+}
+n1.addEventListener('onclick', ChangerSection);
+n2.addEventListener('onclick', ChangerSection);
+n3.addEventListener('onclick', ChangerSection);
