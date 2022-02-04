@@ -99,6 +99,8 @@ nav a:hover{
     width: 100%;
     text-align: left;    
     text-decoration: none;
+    list-style: none;
+    height: 60px;
 }
 .sous a{
     padding: 10px;
@@ -111,4 +113,14 @@ nav a:hover{
 .deroulant > a::after{
     font-size: 12px;
 
+}
+.vert {
+	color : green;
+}
+.red {
+	color : red;
+}
+.bord {
+	box-sizing : 200px;
+	text-align : center;
 }
