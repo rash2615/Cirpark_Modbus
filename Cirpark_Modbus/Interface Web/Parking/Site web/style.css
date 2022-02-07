@@ -43,7 +43,7 @@ footer {
 .saut {
 	width : 25em;
 	border-collapse: collapse;
-	padding: 10px;
+	padding: 10px 30px;
 	border: 1px solid black;
 	text-align: center;
 }
@@ -64,8 +64,7 @@ footer {
     display: none;
     box-shadow: 0px 1px 2px #CCC;
     position: absolute;
-    width: 100%;
-    z-index: 1000;
+    width: 90%;
 }
 nav ul{
     list-style-type: none;
@@ -88,12 +87,10 @@ nav a{
     display: block;
     text-decoration: none;
 }
-
 nav a:hover{
     color: white;
     border-bottom: 2px solid gold;
 }
-
 .sous li{
     float: none;
     width: 100%;
@@ -103,16 +100,14 @@ nav a:hover{
     height: 60px;
 }
 .sous a{
-    padding: 10px;
-    border-bottom: none;
-    background: #B22222;
+   border-bottom: none;
+   background: #B22222;
 }
 .sous a:hover{
     border-bottom: none;
 }
 .deroulant > a::after{
     font-size: 12px;
-
 }
 .vert {
 	color : green;

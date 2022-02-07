@@ -45,7 +45,7 @@ function VerifierFormulaireInscription () {
 	}
 	else {}
 }
-	envoyer.addEventListener('click', VerifierFormulaireInscription);
+	envoyer.addEventListener('onclick', VerifierFormulaireInscription);
 	
 	var mdp_longueur = document.getElementById("mdp_longueur");
 	var mdp_maj = document.getElementById("mdp_maj");
