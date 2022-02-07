@@ -10,7 +10,6 @@
 #include <Vcl.ButtonGroup.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Imaging.jpeg.hpp>
-#include <Vcl.Imaging.pngimage.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -21,7 +20,6 @@ __published:	// Composants gérés par l'EDI
 	TButton *Button1;
 	TButton *Button2;
 	TButton *Button3;
-	TImage *Image2;
 private:	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 	__fastcall TForm1(TComponent* Owner);
