@@ -45,13 +45,15 @@ function VerifierFormulaireInscription () {
 	}
 	else {}
 }
-	envoyer.addEventListener('onclick', VerifierFormulaireInscription);
+
+envoyer.addEventListener('onclick', VerifierFormulaireInscription);
+
 	
+function VerifierMotdePasse() {
 	var mdp_longueur = document.getElementById("mdp_longueur");
 	var mdp_maj = document.getElementById("mdp_maj");
 	var mdp_min = document.getElementById("mdp_min");
 	var mdp_chiffre = document.getElementById("mdp_chiffre");
-function VerifierMotdePasse() {
 	if (mdp1.length < 7) {
 		mdp_longueur.style.color = "red";
 		event.preventDefault();
