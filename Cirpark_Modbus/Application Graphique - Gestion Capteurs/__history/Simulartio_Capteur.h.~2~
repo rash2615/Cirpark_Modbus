@@ -19,7 +19,6 @@ __published:	// Composants gérés par l'EDI
 	TButtonGroup *ButtonGroup1;
 	TButton *Button1;
 	TButton *Button2;
-	TButton *Button3;
 private:	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 	__fastcall TForm1(TComponent* Owner);

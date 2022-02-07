@@ -1544,17 +1544,17 @@ object Form1: TForm1
     Proportional = True
   end
   object ButtonGroup1: TButtonGroup
-    Left = 629
-    Top = 89
+    Left = 632
+    Top = 47
     Width = 139
-    Height = 322
+    Height = 415
     Align = alCustom
     Items = <>
     TabOrder = 0
   end
   object Button1: TButton
-    Left = 647
-    Top = 114
+    Left = 650
+    Top = 80
     Width = 105
     Height = 49
     Caption = 'AJOUTER'
@@ -1567,8 +1567,8 @@ object Form1: TForm1
     TabOrder = 1
   end
   object Button2: TButton
-    Left = 647
-    Top = 226
+    Left = 650
+    Top = 184
     Width = 105
     Height = 49
     Caption = 'SUPPRIMER'
@@ -1579,19 +1579,5 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
-  end
-  object Button3: TButton
-    Left = 647
-    Top = 346
-    Width = 105
-    Height = 49
-    Caption = 'MODIFIER'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clInactiveCaptionText
-    Font.Height = 16
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 3
   end
 end

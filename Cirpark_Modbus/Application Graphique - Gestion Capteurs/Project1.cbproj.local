@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/02/07 09:19:22.592,=C:\Users\Rashmi UNIVERSITE\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2022/02/07 09:19:22.784,=C:\Users\Rashmi UNIVERSITE\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2022/02/07 09:53:24.913,C:\Users\Rashmi UNIVERSITE\Desktop\Projet Cirpark_Modbus\Cirpark_Modbus\Application Graphique - Gestion Capteurs\Simulartio_Capteur.cpp=C:\Users\Rashmi UNIVERSITE\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2022/02/07 09:53:24.913,C:\Users\Rashmi UNIVERSITE\Desktop\Projet Cirpark_Modbus\Cirpark_Modbus\Application Graphique - Gestion Capteurs\Simulartio_Capteur.dfm=C:\Users\Rashmi UNIVERSITE\Documents\Embarcadero\Studio\Projets\Unit1.dfm</Transaction>
+    <Transaction>2022/02/07 09:53:24.913,C:\Users\Rashmi UNIVERSITE\Desktop\Projet Cirpark_Modbus\Cirpark_Modbus\Application Graphique - Gestion Capteurs\Simulartio_Capteur.h=C:\Users\Rashmi UNIVERSITE\Documents\Embarcadero\Studio\Projets\Unit1.h</Transaction>
+    <Transaction>2022/02/07 11:18:41.115,C:\Users\Rashmi UNIVERSITE\Desktop\Projet Cirpark_Modbus\Cirpark_Modbus\Application Graphique - Gestion Capteurs\Project1PCH1.h=C:\Users\Rashmi UNIVERSITE\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2022/02/07 11:18:44.433,C:\Users\Rashmi UNIVERSITE\Desktop\Projet Cirpark_Modbus\Cirpark_Modbus\Application Graphique - Gestion Capteurs\Project1.cbproj=C:\Users\Rashmi UNIVERSITE\Documents\Embarcadero\Studio\Projets\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
