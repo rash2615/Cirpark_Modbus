@@ -1,0 +1,9 @@
+Plages IP : Cirpark Modbus		|	phpmyadmin : cirpark_modbus
+				|	
+172.20.21.220 : 			| Base de Données : cirpark_modbus
+172.20.21.221 : Mini PC (Serveur)	| Identifiant : cirpark
+172.20.21.222 :			| Mot de Passe : Modbus2022
+172.20.21.223 : 			|
+172.20.21.224 :			|
+				|
+________________________________________________________________________________________

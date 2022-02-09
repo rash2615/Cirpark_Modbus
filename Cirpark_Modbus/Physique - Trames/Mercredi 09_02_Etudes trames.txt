@@ -1,0 +1,26 @@
+Trame 1 : 
+
+1c 27 10 53 => 1c 27 01 bb ou 1c 27 00 bc 
+
+1c 27 :	Adresse du capteur			
+10 :	Fonction vérifiant l'état du capteur		
+53 :	<bcc> : somme des octets		
+		=>
+1c 27 :	Adresse du capteur
+01/00 :	état "libre" ou "occupée"
+bb/bc :	complément du <bcc>notée <~bcc>
+
+Trame 2 : 
+
+1c 27 85 c8 => 1c 27 00 06 00 1d 9b
+
+1c 27 :	Adresse du capteur			
+85 :	Fonction qui renvoie les valeurs des compteurs d'impulsions		
+c8 :	<bcc> : somme des octets		 
+		=>
+1c 27 :	Adresse du capteur
+00 :	CntOK : nb impulsion détectée à l'intérieur de la distance
+06 :	CntNOk : nb impulsion détectée en dehors de la distance
+00 :	CntOUT : nb impulsion détectée lorsqu'elle rebondie, sortent de la marge et ne reviennent pas
+1d :	InP : Entrée de la détection des impulsions
+9b :	complément du <bcc>notée <~bcc>
