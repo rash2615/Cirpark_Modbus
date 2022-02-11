@@ -1,9 +1,16 @@
-Plages IP : Cirpark Modbus		|	phpmyadmin : cirpark_modbus
-				|	
-172.20.21.220 : 			| Base de Données : cirpark_modbus
-172.20.21.221 : Mini PC (Serveur)	| Identifiant : cirpark
-172.20.21.222 :			| Mot de Passe : Modbus2022
-172.20.21.223 : 			|
-172.20.21.224 :			|
-				|
-________________________________________________________________________________________
+Plages IP : Cirpark Modbus	
+				
+172.20.21.220 : 			
+172.20.21.221 : Mini PC (Serveur)	
+172.20.21.222 :			
+172.20.21.223 : 			
+172.20.21.224 :			
+
+_______________________________________________________
+				
+phpmyadmin : http://172.20.21.221/phpmyadmin
+
+Base de Données : cirpark_modbus
+Identifiant : cirpark
+Mot de Passe : Modbus2022
+Port : 3306 ou 2001
