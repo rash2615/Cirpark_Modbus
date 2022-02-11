@@ -14,3 +14,10 @@ Base de Données : cirpark_modbus
 Identifiant : cirpark
 Mot de Passe : Modbus2022
 Port : 3306 ou 2001
+
+________________________________________________________
+
+session ubuntu : 
+
+identifiant : cirpark_modbus
+mot de passe : Cirpark
