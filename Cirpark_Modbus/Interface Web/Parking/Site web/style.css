@@ -54,18 +54,22 @@ footer {
 	border: 1px solid black;
 	text-align: center;
 }
-.police {
-	font-family: Trebuchet MS, sans-serif;
 
-}
 .taille{
 	width: 40px;
 	float: left;
 }
+table{
+	position: absolute;
+	left:10%;
+}
 .bortab{
+	width: 80px;
+	height: 80px;
 	border: 1px solid black;
 	border-collapse: collapse;
 	padding: 10px;
+	text-align: center;
 }
 .sous{
     display: none;
@@ -121,10 +125,10 @@ nav a:hover{
     font-size: 12px;
 }
 .vert {
-	color : green;
+	background:   	#90EE90;
 }
 .red {
-	color : red;
+	background:  red;
 }
 .bord {
 	box-sizing : 200px;
