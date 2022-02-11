@@ -7,8 +7,8 @@ html{
 	height:100%;
 }
 header {
-	border : 1px solid #B22222;
-	background: #B22222;
+	border : 1px solid black;
+	background: black;
 	color : white;
 	text-align: center;
 }
@@ -18,7 +18,7 @@ body {
 	height:100%;
 }
 nav {
-	background:  #B22222;
+	background:  black;
 	padding: 20px 50px;
 	font-size: 14px;
 	color : white;
@@ -26,19 +26,26 @@ nav {
 }
 .nav li  {
 	display : inline;
-	padding: 20px;
+	padding: 10px;
 	margin-left : 15px;
-	cursor: pointer; 	
-}
+	cursor: pointer; 
+	float: left;
+  	text-align: center;
+  	list-style: none;
+}	
+.sous ul li a{
+	border-left: 1px solid #444444;
+ 	border-right: 1px solid #444444;
+  	border-top: 1px solid #c9d4d8;
+	border-bottom: 1px solid #444444;}
 footer {
-	background: #B22222;
+	background: black;
 	padding: 20px 20px;
 	text-align: center;	
 	font-weight: bold;
 	align-self: flex-start;
 	color: white;
-	transform: translateY(500%);
-	//position: absolute;
+	transform: translateY(478%);
 }
 .saut {
 	width : 25em;
@@ -49,11 +56,10 @@ footer {
 }
 .police {
 	font-family: Trebuchet MS, sans-serif;
+
 }
 .taille{
 	width: 40px;
-
-
 	float: left;
 }
 .bortab{
@@ -90,7 +96,11 @@ nav a{
 }
 nav a:hover{
     color: white;
-    border-bottom: 2px solid gold;
+    border-bottom: 2px solid white;
+}
+
+.blanc {
+	color:white;
 }
 .sous li{
     float: none;
@@ -102,7 +112,7 @@ nav a:hover{
 }
 .sous a{
    border-bottom: none;
-   background: #B22222;
+   background: black;
 }
 .sous a:hover{
     border-bottom: none;
@@ -119,4 +129,21 @@ nav a:hover{
 .bord {
 	box-sizing : 200px;
 	text-align : center;
+}
+
+.footer .back-to-top-sticky {
+    background-color: black;
+    font-size: .875rem;
+    letter-spacing: normal;
+    opacity: 1;
+    padding-top: 32px;
+    opacity: 1;
+}
+.fleche {
+	padding: 20px 20px;
+	text-align: center;	
+	font-weight: bold;
+	align-self: flex-start;
+	color: white;
+	transform: translateY(300%);
 }

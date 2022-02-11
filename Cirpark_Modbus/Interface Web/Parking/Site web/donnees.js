@@ -49,7 +49,7 @@ function VerifierFormulaireInscription () {
 envoyer.addEventListener('onclick', VerifierFormulaireInscription);
 
 	
-function VerifierMotdePasse() {
+/* function VerifierMotdePasse() {
 	var mdp_longueur = document.getElementById("mdp_longueur");
 	var mdp_maj = document.getElementById("mdp_maj");
 	var mdp_min = document.getElementById("mdp_min");
@@ -62,3 +62,4 @@ function VerifierMotdePasse() {
 		mdp_longueur.style.color = "vert";
 	}
 }
+*/
