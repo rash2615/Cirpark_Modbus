@@ -13,7 +13,7 @@ phpmyadmin : http://172.20.21.221/phpmyadmin
 Base de Données : cirpark_modbus
 Identifiant : cirpark
 Mot de Passe : Modbus2022
-Port : 3306 ou 2001
+Port : 3306
 
 ________________________________________________________
 
@@ -21,3 +21,12 @@ session ubuntu :
 
 identifiant : cirpark_modbus
 mot de passe : Cirpark
+utilisateur : cirparkm
+Connexion ssh avec commande : ssh cirparkm@172.20.21.221
+
+__________________________________________________________
+
+Engine : 
+
+Connexion tcp/rf : 172.20.21.250
+Port : 2001
