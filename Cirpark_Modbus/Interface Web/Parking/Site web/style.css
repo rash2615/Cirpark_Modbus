@@ -53,6 +53,8 @@ footer {
 	padding: 10px 30px;
 	border: 1px solid black;
 	text-align: center;
+	background-color: white;
+
 }
 
 .taille{
@@ -150,4 +152,12 @@ nav a:hover{
 	align-self: flex-start;
 	color: white;
 	transform: translateY(300%);
+}
+.fond-ecran{
+  	background-image: url("./Image/centre.jpg");
+  	opacity: 1;
+  	position: relative;
+}
+.center{
+	margin-left: 400px;
 }
