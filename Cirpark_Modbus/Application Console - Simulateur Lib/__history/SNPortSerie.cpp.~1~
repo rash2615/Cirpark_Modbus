@@ -1,4 +1,4 @@
-﻿#include "SNPortSerie.h"
+#include "SNPortSerie.h"
 
 #ifdef __unix__
 #include <unistd.h>  /* UNIX standard function definitions */
@@ -8,7 +8,7 @@
 #include <sys/ioctl.h>
 #elif _WIN32 || _WIN64
 
-
+#endif
 
 #include <iostream>
 using namespace std;
@@ -600,4 +600,4 @@ int SNPortSerie::lireMessageACK(char message[], int tailleMaximaleDuMessage) con
         message[nbOctetsLus] = '\0';
     return nbOctetsLus;
 }*/
-#endif
+
