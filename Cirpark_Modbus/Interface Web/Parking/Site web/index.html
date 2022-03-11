@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/html" href="n1.html">
 	<link rel="stylesheet" type="text/html" href="n2.html">
 	<link rel="stylesheet" type="text/html" href="n3.html">
+	<img src="Image/icone.jpg"/>
 	<title>CirPark</title>
 </head>
 <header>
