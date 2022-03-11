@@ -19,9 +19,7 @@ using namespace std;
 
    session1.ModifierAdresseIPServeur("172.20.21.250");
    session1.ModifierPortServeur(2001);
-   session1.EnvoyerMessage("etat",10);
-   session1.RecevoirMessage("etat",10);
-   session1.Etat();
+   session1.EnvoyerMessage("Test",2);
 
 
 
