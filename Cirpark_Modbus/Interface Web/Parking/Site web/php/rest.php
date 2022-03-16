@@ -13,6 +13,31 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 	include_once('model.php');
 	$id = ConnectDB();
-	print_r ($id);
-	
+
+	$req_type = $_SERVER['REQUEST_METHOD'];
+	$req_path = $_SERVER['PATH_INFO'];
+
+	$req_data = explode('/',$req_path);
+
+	$header = apache_request_headers();
+
+/////////////////////////// Requête HTTP : GET //////////////////////////////////
+
+if($req_type==='GET'){
+	if($req_data['1']=='drone'&&empty($req_data['2'])){
+		$req
+	}
+
+
+
+
+}
+
+
+/////////////////////////// Requête HTTP : POST ////////////////////////////////
+if($req_type==='POST'){
+	if($req_data['1']=='vol'){
+	}
+}
+
 ?>

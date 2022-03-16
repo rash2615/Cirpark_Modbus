@@ -1,11 +1,10 @@
-var IP="172.20.101.177";
-var PORT="2357";
+var IP="";
+var PORT="";
 var xmlDoc;
 
 // Pour CHROME
 function Lirexml()
     {
-		
 		if(navigator.userAgent.indexOf('Fiefox')){
 			xmlDoc= document.implementation.createDocument("", "", null);
 			xmlDoc.async=false;
