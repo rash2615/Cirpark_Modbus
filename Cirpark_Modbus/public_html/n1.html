@@ -36,18 +36,18 @@
 	<h1 class="rouge cadre"> Plan du Parking </h1><br/>
 	<div class="center">
 	<p class="cadre">Niveau 1</p>
-	<table style="text-align:">
+	<table style="text-align:center">
 			<tr class="vert">
+				<td class="bortab" id="A1"> 🚗 </td>
+				<td class="bortab"> 🚗 </td>
+				<td class="bortab" id="A1"> 🚗 </td>	
 				<td class="bortab"> 🚗 </td>
 				<td class="bortab"> 🚗 </td>
-				<td class="bortab"> 🚗 </td>	
+				<td class="bortab" id="A1"> 🚗 </td>
 				<td class="bortab"> 🚗 </td>
 				<td class="bortab"> 🚗 </td>
 				<td class="bortab"> 🚗 </td>
-				<td class="bortab"> 🚗 </td>
-				<td class="bortab"> 🚗 </td>
-				<td class="bortab"> 🚗 </td>
-				<td class="bortab"> 🚗 </td>
+				<td class="bortab" id="A1"> 🚗 </td>
 			</tr>
 	</table>
 		<img src="Image/flechage.jpeg" width="1040px" height="150px">
@@ -113,5 +113,10 @@
 	</div>
 	<footer>All Right Reserved to Aakash/Rashmi/Yoan/Dilshan - 2022 © </footer>
 	<script type="text/javascript" src="donnees.js"></script>
+	<script type="text/javascript" src="ajax.js"></script>
+
+	<script>
+		chargerPlaces("http://172.20.21.221/public_html/rest.php/place/1");
+	</script>
 </body>
 </html>
