@@ -154,11 +154,15 @@ nav a:hover{
 	transform: translateY(300%);
 }
 .fond-ecran{
-  	background-image: url("./Image/centre.jpg");
-  	opacity: 1;
-  	position: relative;
-	background-size: cover;
+  	background-color:aliceblue;
 }
 .center{
-	margin-left: 400px;
+    margin: auto ;	
+}
+.display{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width:1040px;
+	height:150px;
 }
