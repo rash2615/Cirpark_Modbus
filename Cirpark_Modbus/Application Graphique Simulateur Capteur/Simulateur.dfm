@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Simukateur Capteur - 172.20.21.250:2001 (UDP)'
+  Caption = 'Simulateur Capteur - 172.20.21.250:2001 (UDP)'
   ClientHeight = 404
   ClientWidth = 480
   Color = clHighlightText
@@ -529,120 +529,298 @@ object Form1: TForm1
     Top = 96
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape6: TShape
     Left = 134
     Top = 96
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape7: TShape
     Left = 189
     Top = 96
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape8: TShape
     Left = 244
     Top = 96
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape9: TShape
     Left = 299
     Top = 96
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape10: TShape
     Left = 354
     Top = 96
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape11: TShape
     Left = 409
     Top = 96
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape13: TShape
     Left = 24
     Top = 219
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape14: TShape
     Left = 79
     Top = 219
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape15: TShape
     Left = 134
     Top = 219
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape16: TShape
     Left = 189
     Top = 219
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape17: TShape
     Left = 244
     Top = 219
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape18: TShape
     Left = 299
     Top = 219
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
   end
   object Shape19: TShape
     Left = 354
     Top = 219
     Width = 49
     Height = 81
-    Brush.Color = -1
-    Brush.Style = bsBDiagonal
   end
   object Shape20: TShape
     Left = 409
     Top = 219
     Width = 49
     Height = 81
-    Brush.Color = clBackground
-    Brush.Style = bsBDiagonal
+  end
+  object Label2: TLabel
+    Left = 34
+    Top = 152
+    Width = 29
+    Height = 16
+    Caption = '1C27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 146
+    Top = 152
+    Width = 29
+    Height = 16
+    Caption = '1C27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 256
+    Top = 152
+    Width = 29
+    Height = 16
+    Caption = '1C27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 362
+    Top = 152
+    Width = 29
+    Height = 16
+    Caption = '1C27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 34
+    Top = 232
+    Width = 29
+    Height = 16
+    Caption = '1C27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 146
+    Top = 232
+    Width = 29
+    Height = 16
+    Caption = '1C27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 256
+    Top = 232
+    Width = 29
+    Height = 16
+    Caption = '1C27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 362
+    Top = 232
+    Width = 29
+    Height = 16
+    Caption = '1C27'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 90
+    Top = 152
+    Width = 28
+    Height = 16
+    Caption = '157B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 202
+    Top = 152
+    Width = 28
+    Height = 16
+    Caption = '157B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label12: TLabel
+    Left = 308
+    Top = 152
+    Width = 28
+    Height = 16
+    Caption = '157B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 421
+    Top = 152
+    Width = 28
+    Height = 16
+    Caption = '157B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label14: TLabel
+    Left = 90
+    Top = 232
+    Width = 28
+    Height = 16
+    Caption = '157B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label15: TLabel
+    Left = 202
+    Top = 232
+    Width = 28
+    Height = 16
+    Caption = '157B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label16: TLabel
+    Left = 308
+    Top = 232
+    Width = 28
+    Height = 16
+    Caption = '157B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label17: TLabel
+    Left = 421
+    Top = 232
+    Width = 28
+    Height = 16
+    Caption = '157B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Button1: TButton
     Left = 24
