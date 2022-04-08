@@ -13,7 +13,8 @@ using namespace std;
 TForm1 *Form1;
 
 SNClientUDP client1;
-
+ int mult=2;
+ 	char capteur[16][2];
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
@@ -41,21 +42,29 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 }
 //---------------------------------------------------------------------------
+
 void __fastcall TForm1::Button4Click(TObject *Sender)
 {
-	char capteur[2][2];
 
-	capteur[0][0]=0x1c;
-	capteur[0][1]=0x27;
+	for (int i=0; i<= 16 ; i++){
+	  /*	if (i==0){
+			capteur[i][0]=0x1c;
+			capteur[i][1]=0x27;
+		}
+		if (i==1){
+			capteur[1][0]=0x15;
+			capteur[1][1]=0x7b;
+		}  */
 
-	capteur[1][0]=0x15;
-	capteur[1][1]=0x7b;
-
-
-		char messageCapt1[10];
-        int k=0;
+	}
+	char messageCapt1[10];
+	int k=0;
+		capteur[0][0]=0x1c;
+		capteur[0][1]=0x27;
+		capteur[1][0]=0x15;
+		capteur[1][1]=0x7b;
 	for(int i=0;i<16;i++){
-	  k=i%2;
+	  k=i%mult;
 	messageCapt1[0]=0x41;
 	messageCapt1[1]=0x00;
 	messageCapt1[2]=0x01;
@@ -93,6 +102,21 @@ void __fastcall TForm1::Button4Click(TObject *Sender)
 		if (messageCapt2[7]== 0x00 )
 			tabShape[j] -> Brush -> Color = clGreen;
 	}  */
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+		// Rendre visible la fenetre lors du click sur le bouton ajouter
+	  GroupBox1 ->Visible = true;
+	  Edit1 -> Visible = true;
+	  Edit2 -> Visible = true;
+
+		// Récuperer les données saisies dans les champs
+	  char  valeur1[10],valeur2[10];
+	  strcpy(valeur1, AnsiString( Edit1 -> Text).c_str());
+	  strcpy(valeur2, AnsiString( Edit2 -> Text).c_str());
+
 }
 //---------------------------------------------------------------------------
 

@@ -54,8 +54,12 @@ __published:	// Composants gérés par l'EDI
 	TLabel *Label15;
 	TLabel *Label16;
 	TLabel *Label17;
+	TGroupBox *GroupBox1;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TShape *Shape12;
 	void __fastcall Button4Click(TObject *Sender);
-
+	void __fastcall Button1Click(TObject *Sender);
 
 
 

@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Simulateur Capteur - 172.20.21.250:2001 (UDP)'
-  ClientHeight = 404
-  ClientWidth = 480
+  ClientHeight = 495
+  ClientWidth = 476
   Color = clHighlightText
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -822,6 +822,13 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
   end
+  object Shape12: TShape
+    Left = 8
+    Top = 479
+    Width = 462
+    Height = 10
+    Brush.Color = clNavy
+  end
   object Button1: TButton
     Left = 24
     Top = 352
@@ -829,6 +836,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Ajouter'
     TabOrder = 0
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 136
@@ -847,12 +855,49 @@ object Form1: TForm1
     TabOrder = 2
   end
   object Button4: TButton
-    Left = 376
+    Left = 374
     Top = 352
     Width = 75
     Height = 25
     Caption = 'V'#233'rifier'
     TabOrder = 3
     OnClick = Button4Click
+  end
+  object GroupBox1: TGroupBox
+    Left = 25
+    Top = 402
+    Width = 205
+    Height = 71
+    Caption = 'Valeurs des capteurs'
+    Color = clTeal
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBackground
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 4
+    Visible = False
+    object Edit1: TEdit
+      Left = 14
+      Top = 24
+      Width = 89
+      Height = 21
+      MaxLength = 4
+      TabOrder = 0
+      Text = '0x'
+      Visible = False
+    end
+    object Edit2: TEdit
+      Left = 109
+      Top = 25
+      Width = 89
+      Height = 21
+      TabOrder = 1
+      Text = '0x'
+      Visible = False
+    end
   end
 end
