@@ -13,6 +13,5 @@ function chargerPlaces(url) {
 
 function modifierEtatPlaces(){
     console.log(reponseHTTP);
-    document.getElementById('A1').style.backgroundColor='red';
-
+    document.getElementById('A3').style.backgroundColor='red';
 }

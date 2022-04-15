@@ -13,8 +13,6 @@
 </head>
 <header>
 		<h1 id="titre">Centre Commercial</h1> 
-	</header>
-
 	<nav class="nav li" id="ma_nav"> 
 		<ul>
 			<li><a class="blanc" href="index.php">Accueil</a></li>
@@ -33,25 +31,28 @@
 			<li id="nav_co"><a class="blanc" href="connexion.html">Connexion</a></li>
 		</ul>
 	</nav>
+</header>
 <body class="fond-ecran">
-	
-	<table class="center">
-		<h1 class="cadre center"> Place disponible </h1> <br/>
-		<tr class="police">
-			<th class="cadre">Niveau 1</th>
-			<th class="cadre">Niveau 2</th>
-			<th class="cadre">Niveau 3</th>
-		</tr>
-		<tr class="police">
-			<td class="cadre"> 50 </td>
-			<td class="cadre"> 50 </td>
-			<td class="cadre"> 50 </td>
-		</tr>
-	</table>
+	<section style="padding: 1%;">
+		<table class="center">
+			<h1 class="cadre center"> Place disponible </h1> <br/>
+			<tr class="police">
+				<th class="cadre">Niveau 1</th>
+				<th class="cadre">Niveau 2</th>
+				<th class="cadre">Niveau 3</th>
+			</tr>
+			<tr class="police">
+				<td class="cadre"> 50 </td>
+				<td class="cadre"> 50 </td>
+				<td class="cadre"> 50 </td>
+			</tr>
+		</table>
+	</section>
 		<br>
 		<hr>
-	<table>
-		<h1 class="cadre"> Tarifs Parking </h1> <br/>
+	<section style="padding: 1%;">
+	<table class="center">
+		<h1 class="cadre center"> Tarifs Parking </h1> <br/>
 		<tr class="police">
 			<th class="cadre">Durée</th>
 			<th class="cadre">Prix</th>
@@ -69,10 +70,12 @@
 			<td class="cadre">5€</td>
 		</tr>
 	</table>
+	</section>
 		<br>
 		<hr>
-	<table>
-		<h1 class="cadre"> Horaire Parking </h1> <br/>
+	<section style="padding: 1%;">
+	<table class="center">
+		<h1 class="cadre center"> Horaire Parking </h1> <br/>
 		<tr class="police">
 			<th class="cadre">Jour</th>
 			<th class="cadre">Heure</th>
@@ -90,7 +93,7 @@
 			<td class="cadre">10h - 18h</td>
 		</tr>
 	</table>
-
+	</section>
 	<div class="fleche">
 		<a href="#" id="back-to-top-sticky" class="back-to-top-sticky d-block text-white text-center pb-4" title="Back to top">
 			<span><img style="width: 5%;" src="Image/fleche.png"></span><br>

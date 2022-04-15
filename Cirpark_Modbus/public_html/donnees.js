@@ -35,31 +35,3 @@ n1.addEventListener('onclick', ChangerSection);
 n2.addEventListener('onclick', ChangerSection);
 n3.addEventListener('onclick', ChangerSection);
 
-function VerifierFormulaireInscription () {	
-	var mdp1 = document.getElementById("mdp1").value;
-	var mdp2 = document.getElementById("mdp2").value;
-	var envoyer = document.getElementById("envoyer").value;
-	if (mdp1 != mdp2) {
-		alert ("Mot de passe différent !");	
-		event.preventDefault();
-	}
-	else {}
-}
-
-envoyer.addEventListener('onclick', VerifierFormulaireInscription);
-
-	
-/* function VerifierMotdePasse() {
-	var mdp_longueur = document.getElementById("mdp_longueur");
-	var mdp_maj = document.getElementById("mdp_maj");
-	var mdp_min = document.getElementById("mdp_min");
-	var mdp_chiffre = document.getElementById("mdp_chiffre");
-	if (mdp1.length < 7) {
-		mdp_longueur.style.color = "red";
-		event.preventDefault();
-	}
-	else {
-		mdp_longueur.style.color = "vert";
-	}
-}
-*/

@@ -14,34 +14,36 @@
 <body class="fond-ecran">
 	<header>
 		<h1 id="titre">Centre Commercial</h1> 
+		<nav class="nav li" id="ma_nav"> 
+			<ul>
+				<li><a style="color: white;" href="index.php">Accueil</a></li>
+				<li class="deroulant">
+					<a id="parking">Parking</a>
+					<ul class="sous">
+						<li><a id="n1" style="color: white;" href="n1.html">Niveau 1</a></li>
+						<hr>
+						<li><a id="n2" style="color: white;" href="n2.html">Niveau 2</a></li>
+						<hr>
+						<li><a id="n3" style="color: white;" href="n3.html">Niveau 3</a></li>
+					</ul>
+				</li>
+				<li id="nav_inscript" ><a style="color: white;" href="inscription.html">Inscription</a></li> 
+				<li id="nav_co"><a style="color: white;" href="connexion.html">Connexion</a></li>
+			</ul>
+		</nav>
 	</header>
-	<nav class="nav li" id="ma_nav"> 
-		<ul>
-			<li><a style="color: white;" href="index.html">Accueil</a></li>
-
-			<li class="deroulant">
-				<a id="parking">Parking</a>
-				<ul class="sous">
-        			<li><a id="n1" style="color: white;" href="n1.html">Niveau 1</a></li>
-        			<hr>
-        			<li><a id="n2" style="color: white;" href="n2.html">Niveau 2</a></li>
-        			<hr>
-        			<li><a id="n3" style="color: white;" href="n3.html">Niveau 3</a></li>
-        		</ul>
-        	</li>
-			<li id="nav_inscript" ><a style="color: white;" href="inscription.html">Inscription</a></li> 
-			<li id="nav_co"><a style="color: white;" href="connexion.html">Connexion</a></li>
-		</ul>
-	</nav>
 	<section style="padding: 1%;">
 		<h1 class="rouge cadre center"> Plan du Parking </h1><br/>
 		<div class="center">
 			<p class="cadre center">Niveau 3 </p>
+			<div style="text-align:center;padding:1em 0;"> 
+				<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=fr&size=small&timezone=Europe%2FParis" width="100%" height="90" frameborder="0" seamless></iframe>
+			</div>
 			<table class="center">
 				<tr class="vert">
-					<td class="bortab"> 🚗 </td>
-					<td class="bortab"> 🚗 </td>
-					<td class="bortab"> 🚗 </td>	
+					<td class="bortab" id="C1"> 🚗 </td>
+					<td class="bortab" id="C3"> 🚗 </td>
+					<td class="bortab" id="C5"> 🚗 </td>	
 					<td class="bortab"> 🚗 </td>
 					<td class="bortab"> 🚗 </td>
 					<td class="bortab"> 🚗 </td>
@@ -54,9 +56,9 @@
 			<img src="Image/flechage.jpeg" class="display">
 			<table class="center">		
 				<tr class="vert">
-					<td class="bortab"> 🚗 </td>
-					<td class="bortab"> 🚗 </td>
-					<td class="bortab"> 🚗 </td>
+					<td class="bortab" id="C2"> 🚗 </td>
+					<td class="bortab" id="C4"> 🚗 </td>
+					<td class="bortab" id="C6"> 🚗 </td>
 					<td class="bortab"> 🚗 </td>
 					<td class="bortab"> 🚗 </td>
 					<td class="bortab"> 🚗 </td>
