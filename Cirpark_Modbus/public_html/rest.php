@@ -27,7 +27,7 @@ error_reporting(E_ALL);
 	$header = apache_request_headers();
 
 /////////////////////////// Requete HTTP : GET //////////////////////////////////
-if($req_type==='GET'){
+if($req_type === 'GET'){
 	if($req_data['1']=="place"){ 
 		if(isset($req_data['2'])){
 		//	Recupere l'etat des places d'un niveau
@@ -76,7 +76,7 @@ if($req_type==='GET'){
 }
 	
 /////////////////////////// Requete HTTP : POST ////////////////////////////////
-if($req_type==='POST'){
+if($req_type === 'POST'){
 	/*if($req_data['1']=="reservation"){
 		// Insertion des reservations
 		$reqReservation = "INSERT * FROM reservation WHERE id_utilisateur=?"; 
@@ -84,23 +84,21 @@ if($req_type==='POST'){
 
 		$reponseAPI = $resHistorique;
 	}	*/
+	$data = json_decode(file_get_contents('php://input'), true);
 	if($req_data['1']=="connexion"){
-    	$data = json_decode(file_get_contents('php://input'), true);
+    	
     	$reqConnexion = "SELECT * FROM utilisateur WHERE mail=? AND mdp=?";
 	// Gestion du formulaire de connexion
-		$resConnexion = exectuterRequete($id, $reqConnexion, array());
-		$tableauDeDonnees=array($data["login"],$data["mdp"]);
-		$resConnexion->execute($tableauDeDonnees);
-		$reponseAPI = $resConnexion->fetchAll(PDO::FETCH_ASSOC);
- 		print_r($reponseAPI);
-  		if(empty($reponseAPI) == false) {echo '{"login":"ok"}';}
- 		else {echo '{"login":"bad"}';}
+		$resConnexion = exectuterRequete($id, $reqConnexion, array($data["mail"],$data["mdp"]));
+	
+		$reponseAPI = $resConnexion;
+ 		
+  		if(empty($reponseAPI) == false) {echo '{"mail":"ok"}';}
+ 		else {echo '{"mail":"error"}';}
 	}	
 	else{
-    echo "Les donnees ont été envoyé en GET ???";
+    	echo "Les donnees ont été envoyé en GET ???";
 	}
 	echo(json_encode($reponseAPI));
 }
-
-
 ?>

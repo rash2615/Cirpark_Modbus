@@ -4,7 +4,7 @@ var xmlDoc;
 
 // Pour CHROME
 function readxml(){
-	if(navigator.userAgent.indexOf('Fiefox')){
+	if(navigator.userAgent.indexOf('Firefox')){
 		xmlDoc= document.implementation.createDocument("", "", null);
 		xmlDoc.async=false;
 		xmlDoc.load("rest.php/place");

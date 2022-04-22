@@ -1,40 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/html" href="inscription.html">
-	<link rel="stylesheet" type="text/html" href="connexion.html">
-	<link rel="stylesheet" type="text/html" href="n1.html">
-	<link rel="stylesheet" type="text/html" href="n2.html">
-	<link rel="stylesheet" type="text/html" href="n3.html">
-	<title>CirPark</title>
-</head>
-<body class="fond-ecran">
-	<header>
-		<h1 id="titre">Centre Commercial</h1> 
-		<nav class="nav li" id="ma_nav"> 
-			<ul>
-				<li><a style="color: white;" href="index.php">Accueil</a></li>
-				<li class="deroulant">
-					<a id="parking">Parking</a>
-					<ul class="sous">
-						<li><a id="n1" style="color: white;" href="n1.html">Niveau 1</a></li>
-						<hr>
-						<li><a id="n2" style="color: white;" href="n2.html">Niveau 2</a></li>
-						<hr>
-						<li><a id="n3" style="color: white;" href="n3.html">Niveau 3</a></li>
-					</ul>
-				</li>
-				<li id="nav_inscript" ><a style="color: white;" href="inscription.html">Inscription</a></li> 
-				<li id="nav_co"><a style="color: white;" href="connexion.html">Connexion</a></li>
-			</ul>
-		</nav>
-	</header>
 	<section style="padding: 1%;">
 		<h1 class="rouge cadre center"> Plan du Parking</h1> <br/>
-			<div class="center">
+		<div class="center">
 			<p class="cadre center">Niveau 2 </p>
 			<div style="text-align:center;padding:1em 0;"> 
 				<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=fr&size=small&timezone=Europe%2FParis" width="100%" height="90" frameborder="0" seamless></iframe>
@@ -68,10 +34,11 @@
 					<td class="bortab"> 🚗 </td>
 				</tr>
 			</table>
-	
-	</div>
+		</div>
 	</section>
-	<footer>All Right Reserved to Aakash/Rashmi/Yoan/Dilshan - 2022 © </footer>
 	<script type="text/javascript" src="donnees.js"></script>
-</body>
-</html>
+	<script type="text/javascript" src="ajax.js"></script>
+	<script type="text/javascript" src="horloge.js">Clock()</script>
+	<script>
+		chargerPlaces("http://172.20.21.221/public_html/rest.php/place/2");
+	</script>

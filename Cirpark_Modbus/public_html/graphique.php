@@ -5,8 +5,8 @@ $listeMenuGraphe = array('pitch','roll','yaw','vgx','vgy','vgz','templ','temph',
 $historique = $_GET['historique'];
 
 if (isset($_GET['AfficherGraphe'])){
-    $donnees = "etat/".$;
-    foreach ($_GET['etat'] as $c=>$v) {
+    $donnees = "historique/".$;
+    foreach ($_GET['historique'] as $c=>$v) {
         $donnees .= "/".$v;
     }
     echo $donnees;

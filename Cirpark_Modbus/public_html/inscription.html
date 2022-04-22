@@ -1,41 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/html" href="inscription.html">
-	<link rel="stylesheet" type="text/html" href="connexion.html">
-	<link rel="stylesheet" type="text/html" href="n1.html">
-	<link rel="stylesheet" type="text/html" href="n2.html">
-	<link rel="stylesheet" type="text/html" href="n3.html">
-	<title>CirPark</title>
-</head>
-<header>
-		<h1 id="titre">Centre Commercial</h1> 
-	
-	<nav class="nav li" id="ma_nav"> 
-		<ul>
-			<li><a style="color: white;" href="index.php">Accueil</a></li>
-
-			<li class="deroulant">
-				<a id="parking">Parking</a>
-				<ul class="sous">
-        			<li><a id="n1" style="color: white;" href="n1.html">Niveau 1</a></li>
-        			<hr>
-        			<li><a id="n2" style="color: white;" href="n2.html">Niveau 2</a></li>
-        			<hr>
-        			<li><a id="n3" style="color: white;" href="n3.html">Niveau 3</a></li>
-        		</ul>
-        	</li>
-			<li id="nav_inscript" ><a style="color: white;" href="inscription.html">Inscription</a></li> 
-			<li id="nav_co"><a style="color: white;" href="connexion.html">Connexion</a></li>
-		</ul>
-	</nav>
-</header>
-<body class="fond-ecran">
-	
-	<div id="inscription" style="padding: 1%;"><h1 class="cadre center">Formulaire d'inscription</h1>
+<body class="fond-ecran">	
+	<section id="inscription" style="padding: 1%;"><h1 class="cadre center">Formulaire d'inscription</h1>
 			<p>Inscrivez-vous dès maintenant !</p>
 				<form style="padding: 10px 10px;border: 1px solid black;text-align: center;background-color:white;">
 						<label for="nom"> Nom : </label> 
@@ -50,8 +14,7 @@
 						<input class="bord" type="password" minlength="15" id="mdp2" name="mdp2" required/></br><br>
 						<input type="submit" value="Valider" id="envoyer"/>
 				</form>
-	</div>
-	<footer>All Right Reserved to Aakash/Rashmi/Yoan/Dilshan - 2022 ©</footer>
+			</section>
 	<script type="text/javascript" src="donnees.js"></script>
+	<script type="text/javascript" src="ajax.js"></script>
 </body>
-</html>
