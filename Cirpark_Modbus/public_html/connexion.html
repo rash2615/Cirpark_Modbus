@@ -1,9 +1,19 @@
 <body class="fond-ecran">
 	<section id="connexion" style="padding: 1%;"><h1 class="bas cadre center">Formulaire de connexion</h1>
 		<p>Vous n'avez pas d'identifiant ? Remplir le formulaire </p>
-			<form style="padding: 10px 10px;border: 1px solid black;text-align: center;background-color:white" action="javascript:void(0)">
+			<form style="padding: 10px 10px;border: 1px solid black;text-align: center;background-color:white" method="POST" action="./rest.php">
+
+
+					<!-- MODULE DE CONNEXION !-->
+
+							<input type="hidden" id="connexion" name="connexion" />
+
+					<!-- MODULE DE CONNEXION !-->
+
+
 				<label for="adressmail"> Adresse Mail : </label> 
 				<input class="bord" type="email" maxlength="40" id="adressmail" name="adressmail_utilisateur" required/><br/><hr>
+
 				<label for="mdp"> Mot de passe : </label> 
 				<input class="bord" type="password" maxlength="15" id="mdp" name="mdp_utilisateur" required/><br/>
 				<a style="font-size: 12px;" href="oublieco.html"> Mot de passe oublié ?</a><br/>

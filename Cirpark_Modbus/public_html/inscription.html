@@ -1,7 +1,13 @@
-<body class="fond-ecran">	
 	<section id="inscription" style="padding: 1%;"><h1 class="cadre center">Formulaire d'inscription</h1>
 			<p>Inscrivez-vous dès maintenant !</p>
-				<form style="padding: 10px 10px;border: 1px solid black;text-align: center;background-color:white;">
+				<form style="padding: 10px 10px;border: 1px solid black;text-align: center;background-color:white;" method="POST" action="./rest.php">
+
+					<!-- MODULE D'INSCRIPTION !-->
+
+							<input type="hidden" id="inscription" name="inscription" />
+
+					<!-- MODULE D'INSCRIPTION !-->
+
 						<label for="nom"> Nom : </label> 
 						<input class="bord" type="text" maxlength="40" id="nom" name="nom_utilisateur" required/><br><hr>
 						<label for="prenom"> Prénom : </label> 
@@ -9,12 +15,12 @@
 						<label for="adressmail"> Adresse Mail : </label> 
 						<input class="bord" type="email" maxlength="40" id="adressmail" name="adressmail_utilisateur" required/><br><hr>
 						<label for="mdp1"> Mot de passe : </label> 
-						<input class="bord" type="password" minlength="15" id="mdp1" name="mdp1" required/><br><hr>
+						<input class="bord" type="password" minlength="6" id="mdp1" name="mdp1" required/><br><hr>
 						<label for="mdp2"> Ressaisir le mot de passe : </label> 
-						<input class="bord" type="password" minlength="15" id="mdp2" name="mdp2" required/></br><br>
+						<input class="bord" type="password" minlength="6" id="mdp2" name="mdp2" required/></br><br>
 						<input type="submit" value="Valider" id="envoyer"/>
 				</form>
 			</section>
 	<script type="text/javascript" src="donnees.js"></script>
 	<script type="text/javascript" src="ajax.js"></script>
-</body>
+	

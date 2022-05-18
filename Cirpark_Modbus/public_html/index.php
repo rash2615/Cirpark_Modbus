@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +34,22 @@
 			</ul>
 		</nav>
 	</header>
+<?php
+	if (isset($_GET['créationreussi'])){
+	echo "Votre compte a bien été crée monsieur ".$_COOKIE['NomReg']." ".$_COOKIE['PrenomReg'];
+}
+
+	if (isset($_GET['connexionreussi'])){
+	echo "Bienvenue sur votre compte monsieur ".$_COOKIE['Nom']." ".$_COOKIE['Prenom'];
+}
+	if (isset($_GET['existemail'])){
+	echo "Mince! il semblerais que cet email est déja associer a un compte";
+}
+
+
+
+
+?>
 	<div id="section">
 	<?php 
 		include_once('accueil.html');

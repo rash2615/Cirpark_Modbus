@@ -1,4 +1,5 @@
 <?php	
+$mysqli = mysqli_connect("172.20.21.221","cirpark","Modbus2022","cirpark_modbus");
 // Accès depuis n'importe quel site ou appareil (*)
 header("Access-Control-Allow-Origin: *");
 // Format des données envoyées
@@ -20,14 +21,17 @@ error_reporting(E_ALL);
 	$id = ConnectDB();
 
 	$req_type = $_SERVER['REQUEST_METHOD'];
+	if (isset($_SERVER['PATH_INFO'])) {
+	
 	$req_path = $_SERVER['PATH_INFO'];
 
 	$req_data = explode('/',$req_path);
-
+}
 	$header = apache_request_headers();
 
 /////////////////////////// Requete HTTP : GET //////////////////////////////////
 if($req_type === 'GET'){
+	if (isset($_SERVER['PATH_INFO'])) {
 	if($req_data['1']=="place"){ 
 		if(isset($req_data['2'])){
 		//	Recupere l'etat des places d'un niveau
@@ -44,6 +48,7 @@ if($req_type === 'GET'){
 			$reponseAPI = $resEtatcapteur;
 		}
 	}
+
 	if($req_data['1']=="utilisateur"){
 		// Recupere des donnees de utilisateurs  
 		$reqNButilisateur = "SELECT * FROM utilisateur"; 
@@ -57,48 +62,68 @@ if($req_type === 'GET'){
 		$resHistorique = exectuterRequete($id,$reqHistorique,array());
 		
 		$reponseAPI = $resHistorique;
-	}/*
-	if($req_data['1']=="capteur"){ 
-		// Recupere des capteur par emplacement
-		$reqCapteur = "SELECT nom_capteur, id_place, id_capteur FROM capteur";
-		$resCapteur = exectuterRequete($id,$reqEmplacement,array());
-
-		$reponseAPI= $resEmplacement;
 	}
-	if($req_data['1']=="emplacement"){	
-		// Recupere des capteur par niveau pour affichage des place total dispo 
-		$reqNBplace = "SELECT count(id_place), id_capteur, niveau FROM capteur";
-		$resNBplace = exectuterRequete($id,$reqNBplace,array());
-		 			  
-		$reponseAPI = $resNBplace;
-	}	*/		
+	}
 	echo(json_encode($reponseAPI));	 	
 }
 	
 /////////////////////////// Requete HTTP : POST ////////////////////////////////
 if($req_type === 'POST'){
-	/*if($req_data['1']=="reservation"){
-		// Insertion des reservations
-		$reqReservation = "INSERT * FROM reservation WHERE id_utilisateur=?"; 
-		$resReservation = exectuterRequete($id,$reqReservation,array());
 
-		$reponseAPI = $resHistorique;
-	}	*/
+	if (isset($_POST['connexion'])) {
 	$data = json_decode(file_get_contents('php://input'), true);
-	if($req_data['1']=="connexion"){
+	$email= $_POST["adressmail_utilisateur"];
+	$mdp= $_POST["mdp_utilisateur"];
     	
-    	$reqConnexion = "SELECT * FROM utilisateur WHERE mail=? AND mdp=?";
-	// Gestion du formulaire de connexion
-		$resConnexion = exectuterRequete($id, $reqConnexion, array($data["mail"],$data["mdp"]));
-	
-		$reponseAPI = $resConnexion;
- 		
-  		if(empty($reponseAPI) == false) {echo '{"mail":"ok"}';}
- 		else {echo '{"mail":"error"}';}
-	}	
-	else{
-    	echo "Les donnees ont été envoyé en GET ???";
-	}
-	echo(json_encode($reponseAPI));
+    $reqConnexion = "SELECT * FROM utilisateur WHERE mail='$email' AND mdp='$mdp'";
+    $resultat = $mysqli->query($reqConnexion);
+    $row = $resultat->fetch_assoc();
+
+    if ($row != null) {
+    	header("Location: index.php?connexionreussi");
+    	setcookie("Nom",$row["nom"]);
+    	setcookie("Prenom",$row["prenom"]);
+    	}
+    else {
+    	echo "Oups une erreur est survenue lors de votre connexion";
+    }
+    }
+
+
+    if (isset($_POST['inscription'])) {
+	$data = json_decode(file_get_contents('php://input'), true);
+	$nom= $_POST["nom_utilisateur"];
+	$prenom= $_POST["prenom_utilisateur"];
+    $email= $_POST["adressmail_utilisateur"];
+    $mdp1= $_POST["mdp1"];
+    $mdp2= $_POST["mdp2"];
+
+    $reqConnexion = "SELECT * FROM utilisateur WHERE mail='$email'";
+    $resultat = $mysqli->query($reqConnexion);
+    $row = $resultat->fetch_assoc();
+
+    if ($mdp1 != $mdp2) {
+    	echo "Oups il semblerais que les mots de passe ne sont pas identique";
+    } else if ($row != null) {
+    	header("Location: index.php?existemail");
+    	} else {
+
+	$reqInscription = "INSERT INTO utilisateur (role,nom,prenom,mail,mdp) VALUES ('client','$nom','$prenom','$email','$mdp1')";
+    $resultat = $mysqli->query($reqInscription);
+
+    if ($resultat != null) {
+    	header("Location: index.php?créationreussi");
+    	setcookie("NomReg",$nom);
+    	setcookie("PrenomReg",$prenom);
+    	}
+    else {
+    	echo "Oups une erreur est survenue lors de le création de votre compte";
+    }
+
 }
+    
+    
+    }
+}
+
 ?>

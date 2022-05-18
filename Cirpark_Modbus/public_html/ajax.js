@@ -98,7 +98,7 @@ function afficherConnexion(){
 }
 
 // Gestion du clic sur le bouton connexion
-let oublieco = document.getElementById("oublieco");
+/*let oublieco = document.getElementById("oublieco");
 oublieco.addEventListener("click", afficherOublieco);
 function afficherOublieco(){
   var xhttp = new XMLHttpRequest();
@@ -111,7 +111,7 @@ function afficherOublieco(){
     };
     xhttp.open("GET", "oublieco.html", true);
     xhttp.send();
-}
+}*/
 
 // Gestion du clic sur le bouton inscription
 let inscription = document.getElementById("inscription");
