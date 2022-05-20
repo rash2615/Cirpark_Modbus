@@ -48,7 +48,6 @@ if($req_type === 'GET'){
 			$reponseAPI = $resEtatcapteur;
 		}
 	}
-
 	if($req_data['1']=="utilisateur"){
 		// Recupere des donnees de utilisateurs  
 		$reqNButilisateur = "SELECT * FROM utilisateur"; 
@@ -63,66 +62,67 @@ if($req_type === 'GET'){
 		
 		$reponseAPI = $resHistorique;
 	}
+	if($req_data['1']=="playlists"){
+		// Recupere de la playlist de Yoan
+		//$reqHistorique = "SELECT liste FROM playlist WHERE";  
 	}
 	echo(json_encode($reponseAPI));	 	
-}
-	
+	}
+}	
+
 /////////////////////////// Requete HTTP : POST ////////////////////////////////
 if($req_type === 'POST'){
 
 	if (isset($_POST['connexion'])) {
-	$data = json_decode(file_get_contents('php://input'), true);
-	$email= $_POST["adressmail_utilisateur"];
-	$mdp= $_POST["mdp_utilisateur"];
+		$data = json_decode(file_get_contents('php://input'), true);
+		$email= $_POST["adressmail_utilisateur"];
+		$mdp= $_POST["mdp_utilisateur"];
     	
-    $reqConnexion = "SELECT * FROM utilisateur WHERE mail='$email' AND mdp='$mdp'";
-    $resultat = $mysqli->query($reqConnexion);
-    $row = $resultat->fetch_assoc();
+    	$reqConnexion = "SELECT * FROM utilisateur WHERE mail='$email' AND mdp='$mdp'";
+   	 	$resultat = $mysqli->query($reqConnexion);
+    	$row = $resultat->fetch_assoc();
 
-    if ($row != null) {
-    	header("Location: index.php?connexionreussi");
-    	setcookie("Nom",$row["nom"]);
-    	setcookie("Prenom",$row["prenom"]);
-    	}
-    else {
-    	echo "Oups une erreur est survenue lors de votre connexion";
-    }
-    }
-
+    	if ($row != null) {
+			header("Location: index.php?connexionreussi");
+			setcookie("Nom",$row["nom"]);
+			setcookie("Prenom",$row["prenom"]);
+			}
+		else {
+			echo "Oups une erreur est survenue lors de votre connexion";
+		}
+	}
 
     if (isset($_POST['inscription'])) {
-	$data = json_decode(file_get_contents('php://input'), true);
-	$nom= $_POST["nom_utilisateur"];
-	$prenom= $_POST["prenom_utilisateur"];
-    $email= $_POST["adressmail_utilisateur"];
-    $mdp1= $_POST["mdp1"];
-    $mdp2= $_POST["mdp2"];
+		$data = json_decode(file_get_contents('php://input'), true);
+		$nom= $_POST["nom_utilisateur"];
+		$prenom= $_POST["prenom_utilisateur"];
+		$email= $_POST["adressmail_utilisateur"];
+		$mdp1= $_POST["mdp1"];
+		$mdp2= $_POST["mdp2"];
 
-    $reqConnexion = "SELECT * FROM utilisateur WHERE mail='$email'";
-    $resultat = $mysqli->query($reqConnexion);
-    $row = $resultat->fetch_assoc();
+		$reqConnexion = "SELECT * FROM utilisateur WHERE mail='$email'";
+		$resultat = $mysqli->query($reqConnexion);
+		$row = $resultat->fetch_assoc();
 
-    if ($mdp1 != $mdp2) {
-    	echo "Oups il semblerais que les mots de passe ne sont pas identique";
-    } else if ($row != null) {
-    	header("Location: index.php?existemail");
-    	} else {
+		if ($mdp1 != $mdp2) {
+			echo "Oups il semblerais que les mots de passe ne sont pas identique";
+		} else if ($row != null) {
+			header("Location: index.php?existemail");
+			} 
+			else {
 
-	$reqInscription = "INSERT INTO utilisateur (role,nom,prenom,mail,mdp) VALUES ('client','$nom','$prenom','$email','$mdp1')";
-    $resultat = $mysqli->query($reqInscription);
+		$reqInscription = "INSERT INTO utilisateur (role,nom,prenom,mail,mdp) VALUES ('client','$nom','$prenom','$email','$mdp1')";
+		$resultat = $mysqli->query($reqInscription);
 
-    if ($resultat != null) {
-    	header("Location: index.php?créationreussi");
-    	setcookie("NomReg",$nom);
-    	setcookie("PrenomReg",$prenom);
-    	}
-    else {
-    	echo "Oups une erreur est survenue lors de le création de votre compte";
-    }
-
-}
-    
-    
+		if ($resultat != null) {
+			header("Location: index.php?créationreussi");
+			setcookie("NomReg",$nom);
+			setcookie("PrenomReg",$prenom);
+			}
+		else {
+			echo "Oups une erreur est survenue lors de le création de votre compte";
+		}
+		}	
     }
 }
 

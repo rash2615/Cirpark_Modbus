@@ -13,9 +13,13 @@ function chargerPlaces(url) {
 
 function modifierEtatPlaces(){
     console.log(reponseHTTP);
-    document.getElementById('A3').style.backgroundColor='red';
-    document.getElementById('A1').style.backgroundColor='red';
-    document.getElementById('B2').style.backgroundColor='red';
+    const obj = JSON.parse(reponseHTTP);
+    for(let i=0;i<obj.length;i++){
+      if(obj[i].etat==1)
+        document.getElementById(obj[i].numero_place).style.backgroundColor='red';
+      else
+        document.getElementById(obj[i].numero_place).style.backgroundColor='green';
+    }
 }
 
 // Gestion du clic sur le bouton accueil
@@ -44,11 +48,13 @@ function afficherN1(){
         reponseHTTP=this.responseText;
         //console.log(reponseHTTP);
         document.getElementById("section").innerHTML = reponseHTTP;
+        setTimeout(chargerPlaces("http://172.20.21.221/public_html/rest.php/place/1"),1000);
       }
     };
     xhttp.open("GET", "n1.html", true);
     xhttp.send();
 }
+
 // Gestion du clic sur le bouton n2
 let n2 = document.getElementById("n2");
 n2.addEventListener("click", afficherN2);
@@ -59,6 +65,7 @@ function afficherN2(){
         reponseHTTP=this.responseText;
         //console.log(reponseHTTP);
         document.getElementById("section").innerHTML = reponseHTTP;
+        setTimeout(chargerPlaces("http://172.20.21.221/public_html/rest.php/place/2"),1000);
       }
     };
     xhttp.open("GET", "n2.html", true);
@@ -75,6 +82,7 @@ function afficherN3(){
         reponseHTTP=this.responseText;
         //console.log(reponseHTTP);
         document.getElementById("section").innerHTML = reponseHTTP;
+        setTimeout(chargerPlaces("http://172.20.21.221/public_html/rest.php/place/3"),1000);
       }
     };
     xhttp.open("GET", "n3.html", true);

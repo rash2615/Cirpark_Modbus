@@ -15,6 +15,4 @@ $option=array(CURLOPT_HTTPGET=>true);
 $reponseAPIJson=executerRequeteCurl($donnees,$option);
 $reponseAPITab=json_decode($reponseAPIJson,true);
 }	
-
-
 ?>
