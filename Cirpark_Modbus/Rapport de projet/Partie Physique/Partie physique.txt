@@ -4,5 +4,5 @@ Partie physique : Décodage des trames
 --> Comparaison avec les trames dans le logiciel testpark
 --> On a pris les trames et on a décoder a partir de la documentation
 --> Définie et calcul bcc (démo)
---> Visualisaion des trames sur l'oscilloscope 
---> Caractériser les trames visualisée sur l'osciloscope (période, durée d'un bit, débit)
+--> Visualisation des trames sur l'oscilloscope 
+--> Caractériser les trames visualisée sur l'oscilloscope (période, durée d'un bit, débit)
