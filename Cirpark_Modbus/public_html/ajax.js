@@ -18,10 +18,8 @@ function modifierEtatPlaces(){
       if(obj[i].etat==1)
         document.getElementById(obj[i].numero_place).style.backgroundColor='red';
       else
-        document.getElementById(obj[i].numero_place).style.backgroundColor='green';
+        document.getElementById(obj[i].numero_place).style.backgroundColor='90EE90';
     }
-      
-  
 }
 
 // Gestion du clic sur le bouton accueil
@@ -56,6 +54,7 @@ function afficherN1(){
     xhttp.open("GET", "n1.html", true);
     xhttp.send();
 }
+
 // Gestion du clic sur le bouton n2
 let n2 = document.getElementById("n2");
 n2.addEventListener("click", afficherN2);
@@ -72,6 +71,7 @@ function afficherN2(){
     xhttp.open("GET", "n2.html", true);
     xhttp.send();
 }
+
 // Gestion du clic sur le bouton n3
 let n3 = document.getElementById("n3");
 n3.addEventListener("click", afficherN3);
